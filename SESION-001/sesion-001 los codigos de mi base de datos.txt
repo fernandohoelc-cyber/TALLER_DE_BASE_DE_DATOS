@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS ferrucho;
+USE ferrucho;
+
+Tabla 1
+CREATE TABLE clientes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    ciudad VARCHAR(40),
+    telefono VARCHAR(15),
+    email VARCHAR(60)
+);
+
+Tabla 2
+CREATE TABLE productos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(60) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL,
+    categoria VARCHAR(40)
+);
+
+
+INSERT INTO clientes (nombre, ciudad, telefono, email) VALUES
+('Juan Pérez', 'Buenos Aires', '11-2345-6789', 'juanp@email.com'),
+('María Gómez', 'Córdoba', '351-9876-5432', 'maria.gomez@mail.com'),
+('Carlos Ruiz', 'Rosario', '341-4567-8901', 'carlos.ruiz@ferreteria.com'),
+('Laura Fernández', 'Mendoza', '261-1234-5678', 'laura.fernandez@proveedor.com'),
+('Diego Torres', 'La Plata', '221-8765-4321', 'diego.torres@negocio.com');
+
+
+INSERT INTO productos (nombre, precio, stock, categoria) VALUES
+('Martillo de carpintero', 850.50, 20, 'Herramientas manuales'),
+('Taladro eléctrico 600W', 12500.00, 5, 'Herramientas eléctricas'),
+('Cinta métrica 5m', 320.00, 35, 'Medición'),
+('Llave ajustable 12"', 1100.75, 12, 'Herramientas manuales'),
+('Lija para madera N°80', 180.25, 50, 'Insumos');
+
+
+para Ver a todos los clientes
+SELECT * FROM clientes;
+
+
+para Ver a todos los productos
+SELECT * FROM productos;
